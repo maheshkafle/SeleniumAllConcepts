@@ -25,6 +25,10 @@ public class Locators2 {
 		//Below is an example of writing cssSelector from parent to child div
 		System.out.println(driver.findElement(By.cssSelector("div[class='login-container'] h2")).getText());
 		System.out.println(driver.findElement(By.tagName("p")).getText());
+		//xpath has special way to detect webElement with text() function also. Also if we know that webElement is unique 
+		// then we can use * inplace of tagName e.g //*[text()='Log Out']
+		driver.findElement(By.xpath("//button[text()='Log Out']")).click();
+		driver.close();
 		
 	}
 
