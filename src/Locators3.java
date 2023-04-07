@@ -14,6 +14,8 @@ public class Locators3 {
 		//Sibling - Parent to child traverse
 		//header/div/button[1]/following-sibling::button[1]
 		System.out.println(driver.findElement(By.xpath("//header/div/button[1]/following-sibling::button[1]")).getText());
+		//Child to Parent traverse
+		System.out.println(driver.findElement(By.xpath("//header/div/button[1]/following-sibling::button[1]/parent::div/parent::header/a[@class='blinkingText']")).getText());
 	}
 
 }
