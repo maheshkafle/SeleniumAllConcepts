@@ -24,7 +24,7 @@ public class SelIntroduction {
 		//2 driver	 object has access to the methods of ChromeDriver which are defined in WebDriver Interface 
 		WebDriver driver2 = new ChromeDriver();
 		
-		//FIrefox Launch
+		//Firefox Launch
 		//geckoDriver
 		System.setProperty("webdriver.gecko.driver", "C:\\Users\\kaflemah\\OneDrive - Lisec Holding GmbH\\Documents\\Projects\\Udemy\\Introduction\\Drivers\\geckodriver-v0.32.2-win32\\geckodriver.exe");
 		WebDriver driver3 = new FirefoxDriver();

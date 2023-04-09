@@ -12,5 +12,4 @@ public class WindowActivities {
 		driver.navigate().back();
 		driver.navigate().forward();
 	}
-
 }
