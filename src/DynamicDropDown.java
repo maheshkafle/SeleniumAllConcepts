@@ -23,5 +23,8 @@ public class DynamicDropDown {
 		//In order to Narrow down the scope to find the webelement we use parent-child relationship	locator to identify objects uniquely
 		//Syntax ->parent-xpath child-xpath
 		driver.findElement(By.xpath("//div[@id='ctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='MAA']")).click();
+		driver.findElement(By.name("ctl00$mainContent$view_date1")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.cssSelector(".ui-state-default.ui-state-highlight")).click();
 	}
 }
