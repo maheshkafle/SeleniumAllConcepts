@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class DynamicDropDown {
 
@@ -23,8 +24,22 @@ public class DynamicDropDown {
 		//In order to Narrow down the scope to find the webelement we use parent-child relationship	locator to identify objects uniquely
 		//Syntax ->parent-xpath child-xpath
 		driver.findElement(By.xpath("//div[@id='ctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='MAA']")).click();
-		driver.findElement(By.name("ctl00$mainContent$view_date1")).click();
-		Thread.sleep(2000);
+//		driver.findElement(By.name("ctl00$mainContent$view_date1")).click();
+//		Thread.sleep(2000);
 		driver.findElement(By.cssSelector(".ui-state-default.ui-state-highlight")).click();
+		
+//		driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+//		System.out.println(driver.findElement(By.name("ctl00$mainContent$view_date2")).isEnabled()); //->isEnabled returned true though this field is disabled.
+		//Alternate way to figure out if field is disabled or not
+		System.out.println("Before click on Two way radio button ->"+driver.findElement(By.id("Div1")).getAttribute("style"));
+		driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+		System.out.println("After click on Two way radio button ->"+ driver.findElement(By.id("Div1")).getAttribute("style"));
+		if(driver.findElement(By.id("Div1")).getAttribute("style").contains("1")) {
+			System.out.println("Div1 is enabled");
+			Assert.assertTrue(true);
+		}
+		else {
+			Assert.assertTrue(false);
+		}
 	}
 }
