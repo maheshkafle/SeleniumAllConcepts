@@ -52,8 +52,8 @@ public class CoreJavaBrushUp {
 	    //array of string
 	    System.out.println("------------------------------");
 	    String[] str = {"Mahesh","Kafle", "Academy"};
-	    for (String element : str) {
-	    	System.out.println(element);
+	    for (int k=0; k<str.length; k++) {
+	    	System.out.println(str[k]);
 	    }
 
 	    //Enhanced For loop
@@ -88,8 +88,8 @@ public class CoreJavaBrushUp {
 	    a.remove(1);
 	    System.out.println(a.get(2));
 	    System.out.println("------------------------------");
-	    for (String element : a) {
-	    	System.out.println(element);
+	    for (int s5=0; s5<a.size(); s5++) {
+	    	System.out.println(a.get(s5));
 	    }
 	    System.out.println("------------------------------");
 	    for(String s1: a) {
