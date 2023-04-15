@@ -2,26 +2,24 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Locators2 {
 
 	public static void main(String[] args) throws InterruptedException {
-		
+
         //Chrome Browser
 //		System.setProperty("webdriver.chrome.driver", "C:\\Users\\kaflemah\\OneDrive - Lisec Holding GmbH\\Documents\\Projects\\Udemy\\Introduction\\Drivers\\chromedriver_win32\\chromedriver.exe");
 //		WebDriver driver = new ChromeDriver();
-		
+
 		//Firefox Browser
 		System.setProperty("webdriver.gecko.driver", "C:\\Users\\kaflemah\\OneDrive - Lisec Holding GmbH\\Documents\\Projects\\Udemy\\Introduction\\Drivers\\geckodriver-v0.32.2-win32\\geckodriver.exe");
 		WebDriver driver = new FirefoxDriver();
-		
+
 		//MsEdge Browser
 //		System.setProperty("webdriver.edge.driver", "C:\\Users\\kaflemah\\OneDrive - Lisec Holding GmbH\\Documents\\Projects\\Udemy\\Introduction\\Drivers\\edgedriver_win64\\msedgedriver.exe");
 //		WebDriver driver = new EdgeDriver();
-		
+
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		String password = GetPassword(driver);
 		driver.get("https://rahulshettyacademy.com/locatorspractice/");
@@ -37,13 +35,13 @@ public class Locators2 {
 		//Below is an example of writing cssSelector from parent to child div
 		System.out.println(driver.findElement(By.cssSelector("div[class='login-container'] h2")).getText());
 		System.out.println(driver.findElement(By.tagName("p")).getText());
-		//xpath has special way to detect webElement with text() function also. Also if we know that webElement is unique 
+		//xpath has special way to detect webElement with text() function also. Also if we know that webElement is unique
 		// then we can use * inplace of tagName e.g //*[text()='Log Out']
 		driver.findElement(By.xpath("//button[text()='Log Out']")).click();
 		driver.close();
-		
+
 	}
-	
+
 	public static String GetPassword(WebDriver driver) throws InterruptedException {
 		driver.get("https://rahulshettyacademy.com/locatorspractice/");
 		driver.findElement(By.linkText("Forgot your password?")).click();
