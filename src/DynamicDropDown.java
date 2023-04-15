@@ -27,7 +27,7 @@ public class DynamicDropDown {
 //		driver.findElement(By.name("ctl00$mainContent$view_date1")).click();
 //		Thread.sleep(2000);
 		driver.findElement(By.cssSelector(".ui-state-default.ui-state-highlight")).click();
-		
+
 //		driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
 //		System.out.println(driver.findElement(By.name("ctl00$mainContent$view_date2")).isEnabled()); //->isEnabled returned true though this field is disabled.
 		//Alternate way to figure out if field is disabled or not

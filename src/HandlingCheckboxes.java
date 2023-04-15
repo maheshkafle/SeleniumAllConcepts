@@ -19,7 +19,7 @@ public class HandlingCheckboxes {
 		Thread.sleep(2000);
 		System.out.println("isSeleted: "+ driver.findElement(By.name("ctl00$mainContent$chk_friendsandfamily")).isSelected());
 		//Hint: Incase of Assert.assert stmt. if test fails, then only program execution fails else nothing happens
-		Assert.assertTrue(driver.findElement(By.name("ctl00$mainContent$chk_friendsandfamily")).isSelected()); 
+		Assert.assertTrue(driver.findElement(By.name("ctl00$mainContent$chk_friendsandfamily")).isSelected());
 		System.out.println(driver.findElements(By.cssSelector("input[type='checkbox']")).size());
 	}
 

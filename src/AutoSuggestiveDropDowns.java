@@ -11,7 +11,7 @@ public class AutoSuggestiveDropDowns {
 		//Chrome Browser
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\kaflemah\\OneDrive - Lisec Holding GmbH\\Documents\\Projects\\Udemy\\Introduction\\Drivers\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
-		
+
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
 		driver.manage().window().maximize();
 		driver.findElement(By.id("autosuggest")).sendKeys("nor");
@@ -24,8 +24,6 @@ public class AutoSuggestiveDropDowns {
 				break;
 			}
 		}
-		
-
 	}
 
 }

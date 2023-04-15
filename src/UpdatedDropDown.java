@@ -7,7 +7,7 @@ import org.testng.Assert;
 public class UpdatedDropDown {
 
 	public static void main(String[] args) throws InterruptedException {
-		
+
 		//Chrome Browser
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\kaflemah\\OneDrive - Lisec Holding GmbH\\Documents\\Projects\\Udemy\\Introduction\\Drivers\\chromedriver_win32\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();

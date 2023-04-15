@@ -1,7 +1,7 @@
 
 public class MethodDemo1 {
 
-	public String Userdata() {	
+	public String Userdata() {
 		return "Calling Userdata() method";
 	}
 }

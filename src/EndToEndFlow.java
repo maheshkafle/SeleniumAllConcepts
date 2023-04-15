@@ -29,9 +29,9 @@ public class EndToEndFlow {
 		//In order to Narrow down the scope to find the webelement we use parent-child relationship	locator to identify objects uniquely
 		//Syntax ->parent-xpath child-xpath
 		driver.findElement(By.xpath("//div[@id='ctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='MAA']")).click();
-		
+
         driver.findElement(By.cssSelector(".ui-state-default.ui-state-highlight")).click();
-		
+
 //		driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
 //		System.out.println(driver.findElement(By.name("ctl00$mainContent$view_date2")).isEnabled()); //->isEnabled returned true though this field is disabled.
 		//Alternate way to figure out if field is disabled or not
@@ -46,7 +46,7 @@ public class EndToEndFlow {
 			Assert.assertTrue(false);
 		}
 		driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_0")).click(); //again click to one-way
-		
+
 		driver.findElement(By.id("divpaxinfo")).click();
 		Thread.sleep(2000);
 //		driver.findElement(By.id("hrefIncAdt")).click();
@@ -59,7 +59,7 @@ public class EndToEndFlow {
 		System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
 		//Hint: Incase of Assert.assert stmt. if test fails, then only program execution fails else nothing happens
 		Assert.assertEquals(driver.findElement(By.id("divpaxinfo")).getText(), "5 Adult");
-		
+
 		//DropDown with Select Tag - Static DropDown
 		WebElement staticDropDown = driver.findElement(By.id("ctl00_mainContent_DropDownListCurrency"));
 		Select dropdown = new Select(staticDropDown);
@@ -73,7 +73,7 @@ public class EndToEndFlow {
 		System.out.println(dropdown.getFirstSelectedOption().getText());
 		Thread.sleep(2000);
 		driver.findElement(By.id("ctl00_mainContent_btn_FindFlights")).click();//click on search button
-		
+
 	}
 
 }
