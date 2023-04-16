@@ -18,10 +18,18 @@ public class Base {
 		 * Disadvantage: Hide performance issue in our web application so it may not be caught by this wait.
 		 * */
 		
-		/*Explicit Wait
+		/*Explicit Wait 
 		 * Advantage: No performance issues as wait is applied at only targeted elements
 		 * Disadvantage: Wait is applied at only targeted elements this is why we need to write more code
+		 * 
+		 * 
+		 * (Types of Explicit Wait -> WebDriverWait & FluentWait)
+		 * Main Difference between WebDriverWait and FluentWait is that WebDriverWait continuously keeps checking
+		 * on webElement but in FluentWait it checks only after Polling Time which is passed when defining this wait.
+		 * e.g WebDrvierWait 10sec (Checks webElement continuously for 10sec)
+		 *     FluentWait 10sec, Polling time 2sec (will check only after time Interval of  2sec i.e Polling time for 10sec)
 		 * */
+		
 		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		WebDriverWait w = new WebDriverWait(driver, 5);
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/");
