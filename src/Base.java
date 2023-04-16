@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Base {
 	public static void main(String[] args) throws InterruptedException {
@@ -13,14 +15,15 @@ public class Base {
 		WebDriver driver= new ChromeDriver();
 		/*Implicit Wait
 		 * Advantage: Applied for each and every elements this is why code is readable
-		 * Disadvantage: Hide performance issue in our web application
+		 * Disadvantage: Hide performance issue in our web application so it may not be caught by this wait.
 		 * */
 		
 		/*Explicit Wait
-		 * Advantage: We can avoid performance issue in our web application 
-		 * Disadvantage: Need to write waits for specific elements this is why code looks junky
+		 * Advantage: No performance issues as wait is applied at only targeted elements
+		 * Disadvantage: Wait is applied at only targeted elements this is why we need to write more code
 		 * */
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		WebDriverWait w = new WebDriverWait(driver, 5);
 		driver.get("https://rahulshettyacademy.com/seleniumPractise/");
 		//Add some wait before getting total products
 		Thread.sleep(3000);
@@ -29,8 +32,12 @@ public class Base {
 		Additems(driver, itemsNeeded);	
 		driver.findElement(By.cssSelector("img[alt='Cart']")).click();
 		driver.findElement(By.xpath("//button[text()='PROCEED TO CHECKOUT']")).click();
+		//Explicit Wait target to promoCode input field
+		w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input.promoCode")));
 		driver.findElement(By.cssSelector("input.promoCode")).sendKeys("rahulshettyacademy");
 		driver.findElement(By.cssSelector("button.promoBtn")).click();
+		//Explicit Wait target to text that gets visible after applying promo Code
+		w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span.promoInfo")));
 		System.out.println(driver.findElement(By.cssSelector("span.promoInfo")).getText());
 	}
 	
