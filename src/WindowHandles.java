@@ -21,5 +21,9 @@ public class WindowHandles {
 		String childId = it.next();
 		driver.switchTo().window(childId);
 		System.out.println(driver.findElement(By.cssSelector("p.im-para.red")).getText());
+		System.out.println(driver.findElement(By.cssSelector("p.im-para.red")).getText().split(" ")[4].trim());
+		String emailId = driver.findElement(By.cssSelector("p.im-para.red")).getText().split(" ")[4].trim();
+		driver.switchTo().window(parentId);
+		driver.findElement(By.id("username")).sendKeys(emailId);
 	}
 }
