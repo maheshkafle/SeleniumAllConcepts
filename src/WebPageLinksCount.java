@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebPageLinksCount {
@@ -12,5 +13,10 @@ public class WebPageLinksCount {
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 		System.out.println(driver.findElements(By.tagName("a")).size());
+		
+		//Ger all the links in footer section of webPage
+		//Limit driver to footer section by creating footerDriver
+		WebElement footerDriver = driver.findElement(By.id("gf-BIG"));
+		System.out.println(footerDriver.findElements(By.tagName("a")).size());
 	}
 }
