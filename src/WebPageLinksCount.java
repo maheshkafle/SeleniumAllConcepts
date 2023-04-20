@@ -22,6 +22,12 @@ public class WebPageLinksCount {
 		//3. Get all the links in first column inside footer section
 		WebElement columndriver = footerDriver.findElement(By.xpath("//table/tbody/tr/td[1]/ul"));
 		System.out.println(columndriver.findElements(By.tagName("a")).size());
+		int totalLinks = columndriver.findElements(By.tagName("a")).size();
+		
+		//3. click on each link in column and check if pages are opening
+		for(int i=1; i< totalLinks; i++) {
+			columndriver.findElements(By.tagName("a")).get(i).click();
+		}
 		
 	}
 }
