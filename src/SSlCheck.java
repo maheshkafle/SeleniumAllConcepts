@@ -28,6 +28,10 @@ public class SSlCheck {
 		options.setExperimentalOption("prefs", prefs);
 		
 		driver.get("https://expired.badssl.com/");
+		
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		
 		System.out.println(driver.getTitle());
 	}
 }
