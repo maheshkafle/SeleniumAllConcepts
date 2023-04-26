@@ -4,6 +4,7 @@ import java.io.IOException;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+//From  https://commons.apache.org/proper/commons-io/download_io.cgi  Downloaded jar file and added as external path then only line. 8 worked
 import org.apache.commons.io.FileUtils;
 
 public class TakesScreenshotDemo {
